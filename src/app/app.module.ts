@@ -9,6 +9,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movies/movie/movie.component';
 
+//Routes
+import { APP_ROUTING } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { MovieComponent } from './components/movies/movie/movie.component';
     MovieComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
