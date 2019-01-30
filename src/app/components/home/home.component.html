@@ -1,3 +1,47 @@
-<p>
-  home works!
-</p>
+<div class="row mt-5">
+
+<h2>Peliculas en cartelera</h2>
+<div class="images-theaters">
+    <div class="item" *ngFor="let movie of moviesTheaters ; let a = index" >
+        <a class="card text-white" *ngIf="movie.poster_path" [routerLink]="['/movie',movie.id]">
+          <img [src]=" movie.poster_path | noimage " class="card-img " [ngClass]="{ 'img-big': a == 0 , 'img-median': a != 0  }">
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ movie.title }}</h5>
+          </div>
+        </a>
+    </div>
+</div>
+
+</div>
+
+<div class="row mt-5">
+
+<h2>Populares</h2>
+<div class="images-theaters">
+    <div class="item" *ngFor="let movie of moviesPopular | slice:0:6 ; let a = index">
+        <a class="card text-white" *ngIf="movie.poster_path" [routerLink]="['/movie',movie.id]">
+          <img [src]=" movie.poster_path | noimage " class="card-img " [ngClass]="{ 'img-big': a == 0 , 'img-median': a != 0  }">
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ movie.title }}</h5>
+          </div>
+        </a>
+    </div>
+</div>
+
+</div>
+
+<div class="row mt-5">
+
+<h2>Populares entre los mas Pequeños</h2>
+<div class="images-theaters">
+    <div class="item" *ngFor="let movie of moviesBoy | slice:0:6 ; let a = index">
+        <a class="card text-white" *ngIf="movie.poster_path" [routerLink]="['/movie',movie.id]">
+          <img [src]=" movie.poster_path | noimage " class="card-img " [ngClass]="{ 'img-big': a == 0 , 'img-median': a != 0  }">
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ movie.title }}</h5>
+          </div>
+        </a>
+    </div>
+</div>
+
+</div>

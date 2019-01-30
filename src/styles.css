@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+
+.item {
+    float: left;
+}
+.item img {
+    display: block;
+    width: 100%;
+}
+.container{
+    width:100%;
+}
+
+.images-theaters .img-big{
+  width: 730px;
+}
+.images-theaters .img-median{
+  width: 365px;
+}

@@ -6,11 +6,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { MoviesComponent } from './components/movies/movies.component';
-import { MovieComponent } from './components/movies/movie/movie.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 //Routes
 import { APP_ROUTING } from './app.routes';
+
+//Services
+import { MoviesService } from './services/movies.service';
+import { HttpModule , JsonpModule } from '@angular/http';
+
+//Forms
+
+import { FormsModule } from '@angular/forms';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 
 @NgModule({
@@ -19,14 +27,17 @@ import { APP_ROUTING } from './app.routes';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
-    MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpModule,
+    JsonpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ MoviesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
